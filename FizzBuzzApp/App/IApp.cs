@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace FizzBuzzApp.App
 {
-    internal interface IApp
+    public interface IApp
     {
+        void Run(string[] args);
+
     }
 }
