@@ -12,9 +12,12 @@ namespace Infrastructure.Services
 {
     public class ServiceCreator<TInstance> : IServiceCreator<TInstance> where TInstance : class
     {
-        public TInstance GetInstance(string assemblyName, string interfaceName, string className)
+        public TInstance? GetInstance(string assemblyName, string interfaceName, string className)
         {
             Assembly ass = Assembly.LoadFrom(assemblyName);
+
+            TInstance? result = new NullFBService() as TInstance;
+
 
             var type = ass.GetTypes().Where(type =>
             type.FullName == className
@@ -23,8 +26,10 @@ namespace Infrastructure.Services
             && type.GetInterface(interfaceName) != null)
              .Select(t => t).FirstOrDefault();
 
-            var result = type == null ? null :
-                Activator.CreateInstance(type) as TInstance;
+
+            if(type != null) 
+                result = Activator.CreateInstance(type) as TInstance;
+            
 
             return result;
         }

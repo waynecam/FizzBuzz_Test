@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Services
 {
-    public class FBService :BaseFBService, IFBService
+    public class FBService :BaseFBService
     {
 
     }
