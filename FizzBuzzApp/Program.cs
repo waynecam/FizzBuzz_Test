@@ -22,7 +22,7 @@ using var serviceProvider = services.BuildServiceProvider();
 
 try
 {
-    serviceProvider.GetService<IApp>().Run(args);
+    serviceProvider?.GetService<IApp>()?.Run(args);
 }
 catch (Exception)
 {
