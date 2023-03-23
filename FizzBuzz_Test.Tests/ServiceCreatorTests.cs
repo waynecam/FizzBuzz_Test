@@ -11,7 +11,9 @@ namespace FizzBuzz_Test.Tests
         {
             IServiceCreator<IFBService> serviceCreator = new ServiceCreator<IFBService>();
 
-            var instance = serviceCreator.GetInstance("","","");
+            var instance = serviceCreator.GetInstance("Infrastructure.dll",
+                "Application.Contracts.IFBService",
+                "Infrastructure.Services.FBService");
 
             instance.ShouldBeOfType<FBService>();
         }

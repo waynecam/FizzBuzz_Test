@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Formats.Asn1;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +14,19 @@ namespace Infrastructure.Services
     {
         public TInstance GetInstance(string assemblyName, string interfaceName, string className)
         {
-            throw new NotImplementedException();
+            Assembly ass = Assembly.LoadFrom(assemblyName);
+
+            var type = ass.GetTypes().Where(type =>
+            type.FullName == className
+            && !type.IsAbstract
+            && type.IsClass
+            && type.GetInterface(interfaceName) != null)
+             .Select(t => t).FirstOrDefault();
+
+            var result = type == null ? null :
+                Activator.CreateInstance(type) as TInstance;
+
+            return result;
         }
     }
 }
