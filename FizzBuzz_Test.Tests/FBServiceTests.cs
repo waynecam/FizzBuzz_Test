@@ -10,8 +10,13 @@ namespace FizzBuzz_Test.Tests
 
         Mock<IServiceCreator<IFBService>> _mockServiceCreator;
 
-        [Fact]
-        public void FizzBuzzCalculationTest()
+        [Theory]
+        [InlineData(15, "FizzBuzz")]
+        [InlineData(3, "Fizz")]
+        [InlineData(10, "Buzz")]
+        [InlineData(1, "1")]
+        [InlineData(98, "98")]
+        public void FizzBuzzCalculationTest(int input, string expectedResult)
         {
             _mockServiceCreator = new Mock<IServiceCreator<IFBService>>();
 
@@ -20,9 +25,9 @@ namespace FizzBuzz_Test.Tests
 
             var fbService = _mockServiceCreator.Object.GetInstance("", "", "");
 
-            var result = fbService?.CalculateFizzBuzzResult(15);
+            var result = fbService?.CalculateFizzBuzzResult(input);
 
-            result.ShouldBe("FizzBuzz");
+            result.ShouldBe(expectedResult);
 
 
 
