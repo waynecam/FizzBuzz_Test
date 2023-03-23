@@ -9,6 +9,6 @@ namespace Infrastructure.Services
 {
     public abstract class BaseFBService : IFBService
     {
-
+        public abstract string CalculateFizzBuzzResult(int input);
     }
 }

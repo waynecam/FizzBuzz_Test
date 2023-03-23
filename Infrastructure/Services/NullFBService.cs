@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Services
 {
-    public class NullFBService :BaseFBService
+    public class NullFBService : BaseFBService
     {
-
+        public override string CalculateFizzBuzzResult(int input)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

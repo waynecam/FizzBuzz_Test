@@ -8,6 +8,6 @@ namespace Application.Contracts
 {
     public interface IFBService
     {
-
+        string CalculateFizzBuzzResult(int input);
     }
 }
