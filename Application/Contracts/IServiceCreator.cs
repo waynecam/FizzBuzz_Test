@@ -8,6 +8,6 @@ namespace Application.Contracts
 {
     public interface IServiceCreator<TInstance> where TInstance : class
     {
-        TInstance GetInstance(string assemblyName, string interfaceName, string className);
+        TInstance? GetInstance(string assemblyName, string interfaceName, string className);
     }
 }
