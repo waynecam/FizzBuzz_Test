@@ -10,7 +10,7 @@ namespace Infrastructure.Services
     {
         public override string CalculateFizzBuzzResult(int input)
         {
-            throw new NotImplementedException();
+            return "Not Implemented";
         }
     }
 }
