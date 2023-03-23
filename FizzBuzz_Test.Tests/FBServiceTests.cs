@@ -1,6 +1,6 @@
 namespace FizzBuzz_Test.Tests
 {
-    public class UnitTest1
+    public class FBServiceTests
     {
         [Fact]
         public void Test1()
