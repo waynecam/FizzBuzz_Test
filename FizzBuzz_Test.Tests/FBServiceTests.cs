@@ -33,19 +33,24 @@ namespace FizzBuzz_Test.Tests
 
         }
 
-        [Fact]
-        public void ReturnsNullFBServiceNotImplementedMessageTest()
+        [Theory]
+        [InlineData(15, "Not Implemented")]
+        [InlineData(3, "Not Implemented")]
+        [InlineData(10, "Not Implemented")]
+        [InlineData(1, "Not Implemented")]
+        [InlineData(98, "Not Implemented")]
+        public void ReturnsNullFBServiceNotImplementedMessageTest(int input, string expectedResult)
         {
             _mockServiceCreator = new Mock<IServiceCreator<IFBService>>();
 
             _mockServiceCreator.Setup(x => x.GetInstance(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()))
                  .Returns(new NullFBService());
 
-            var fbService = _mockServiceCreator.Object.GetInstance("", "", "");
+            var nullFBService = _mockServiceCreator.Object.GetInstance("", "", "");
 
-            var result = fbService?.CalculateFizzBuzzResult(15);
+            var result = nullFBService?.CalculateFizzBuzzResult(input);
 
-            result.ShouldBe("Not Implemented");
+            result.ShouldBe(expectedResult);
         }
     }
 }
