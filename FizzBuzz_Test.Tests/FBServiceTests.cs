@@ -32,5 +32,20 @@ namespace FizzBuzz_Test.Tests
 
 
         }
+
+        [Fact]
+        public void ReturnsNullFBServiceNotImplementedMessageTest()
+        {
+            _mockServiceCreator = new Mock<IServiceCreator<IFBService>>();
+
+            _mockServiceCreator.Setup(x => x.GetInstance(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()))
+                 .Returns(new NullFBService());
+
+            var fbService = _mockServiceCreator.Object.GetInstance("", "", "");
+
+            var result = fbService?.CalculateFizzBuzzResult(15);
+
+            result.ShouldBe("Not Implemented");
+        }
     }
 }
