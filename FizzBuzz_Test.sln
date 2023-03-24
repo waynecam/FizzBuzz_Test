@@ -11,13 +11,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "presentation", "presentatio
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{5E46FE6D-E828-4848-830F-00440DC40E70}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{5EC0E694-D21F-4198-9EED-FEC82F5916B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Application\Application.csproj", "{5EC0E694-D21F-4198-9EED-FEC82F5916B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FizzBuzz_Test.Tests", "FizzBuzz_Test.Tests\FizzBuzz_Test.Tests.csproj", "{1A6A7202-79E6-4957-999C-21E4CE01939F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FizzBuzz_Test.Tests", "FizzBuzz_Test.Tests\FizzBuzz_Test.Tests.csproj", "{1A6A7202-79E6-4957-999C-21E4CE01939F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{54CFE4FD-A34A-47A7-A4DD-012603158DF0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{54CFE4FD-A34A-47A7-A4DD-012603158DF0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FizzBuzzApp", "FizzBuzzApp\FizzBuzzApp.csproj", "{1FF79A45-83A2-405A-8BF5-975E1E47C8EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FizzBuzzApp", "FizzBuzzApp\FizzBuzzApp.csproj", "{1FF79A45-83A2-405A-8BF5-975E1E47C8EF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4759317F-BBA2-4BD9-8CC8-6A277A3CD6A5}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
